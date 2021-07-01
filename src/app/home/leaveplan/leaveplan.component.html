@@ -1,0 +1,13 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>Leave Plan</mat-card-title>
+        <mat-card-subtitle> Plan your up coming leave. </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <div *ngFor="let question of questions; let i = index" [formGroup]="form">
+            <b style="margin-right: 10px;">{{i + 1}}. {{question.value}}</b>
+            <mat-slider thumbLabel tickInterval="10" min="1" max="100" [formControlName]="data"></mat-slider>
+        </div>
+        <button (click)="onSave()">Submit</button>
+    </mat-card-content>
+</mat-card>
